@@ -1,0 +1,33 @@
+@media (max-width: 768px) {
+
+    .open-title {
+        font-size: 48px;
+    }
+
+    .open-subtitle {
+        font-size: 25px;
+    }
+
+    .envelope {
+        transform: scale(.85);
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    .gallery h2 {
+        font-size: 38px;
+    }
+
+    .carousel {
+        border-radius: 18px;
+    }
+
+    .music-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+    }
+
+}
