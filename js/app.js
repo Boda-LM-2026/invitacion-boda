@@ -257,112 +257,7 @@ if (recepcionWaze && CONFIG.recepcionWaze) {
 }
 
     }
-/* =====================================
-   INVITADO SEGÚN URL
-===================================== */
 
-// Leer parámetros de la URL
-const params = new URLSearchParams(window.location.search);
-
-const nombreInvitado =
-    params.get("nombre");
-
-let maxInvitados =
-    parseInt(params.get("invitados"));
-
-const nombreInvitacion =
-    document.getElementById("nombreInvitacion");
-
-if (nombreInvitacion && nombreInvitado) {
-
-    nombreInvitacion.textContent =
-        nombreInvitado;
-
-}
-// =====================================
-// VALIDAR CANTIDAD MÁXIMA
-// =====================================
-
-// Si no viene cantidad o es incorrecta,
-// se permite solamente 1
-if (
-    isNaN(maxInvitados) ||
-    maxInvitados < 1
-) {
-
-    maxInvitados = 1;
-
-}
-
-
-// Máximo permitido en nuestra invitación
-if (maxInvitados > 10) {
-
-    maxInvitados = 10;
-
-}
-
-
-// =====================================
-// COLOCAR NOMBRE AUTOMÁTICAMENTE
-// =====================================
-
-const guestNameInput =
-    document.getElementById("guestName");
-
-
-if (guestNameInput) {
-
-    if (nombreInvitado) {
-
-        guestNameInput.value =
-            nombreInvitado;
-
-        guestNameInput.readOnly = true;
-
-    } else {
-
-        guestNameInput.readOnly = false;
-
-    }
-
-}
-
-
-// =====================================
-// CREAR OPCIONES DEL COMBO
-// =====================================
-
-const guestsSelect =
-    document.getElementById("guests");
-
-
-if (guestsSelect) {
-
-    for (
-        let i = 1;
-        i <= maxInvitados;
-        i++
-    ) {
-
-        const option =
-            document.createElement("option");
-
-
-        option.value = i;
-
-
-        option.textContent =
-            i === 1
-                ? "1 invitado"
-                : `${i} invitados`;
-
-
-        guestsSelect.appendChild(option);
-
-    }
-
-}
 
     /* =====================================
        CONFIRMACIÓN POR WHATSAPP
@@ -421,17 +316,6 @@ if (guestsSelect) {
 
             }
 
-
-            // Evitar cantidades mayores a las permitidas
-if (Number(cantidad) > maxInvitados) {
-
-    alert(
-        `Esta invitación permite un máximo de ${maxInvitados} invitados.`
-    );
-
-    return;
-
-}
 
             // Verificar configuración
             if (
