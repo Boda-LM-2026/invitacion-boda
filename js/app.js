@@ -543,32 +543,15 @@ document.addEventListener("DOMContentLoaded", () => {
             () => {
 
 
-                const guestName =
-                    document.getElementById(
-                        "guestName"
-                    );
-
-
-                const adults =
-                    document.getElementById(
-                        "adults"
-                    );
-
-
-                const children =
-                    document.getElementById(
-                        "children"
-                    );
-
-
-                if (
-                    !guestName ||
-                    !adults
-                ) {
+             alert(
+    "¡Muchas gracias por su interés en acompañarnos! 💕\n\n" +
+    "La fecha para confirmar asistencia ya ha finalizado. " +
+    "Por favor, comuníquese con los novios para consultar si aún es posible confirmar."
+);
 
                     return;
 
-                }
+                
 
 
                 const nombre =
